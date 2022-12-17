@@ -5,7 +5,10 @@
 		console.log(url);
 	     const regex = /([a-z]*.html)/gm;
          let pageArray = url.match(regex);
-	     const page = pageArray.join();
+	     let page = '';
+		 if(pageArray !== null){
+			 page = pageArray.join();
+		 }
 		 return page;
 	}
     function getId(id){
@@ -17,7 +20,10 @@
 		let result = getId('result');
 		const regex = /[0-9]+/gm;
 		let buttonArray = obj.match(regex);
-		const buttonnum = buttonArray.join();
+		buttonnum = '';
+		if(buttonArray !== null){
+			buttonnum = buttonArray.join();
+		}
 		result.textContent= '  ' + buttonnum + ' ';
 	}
 	
