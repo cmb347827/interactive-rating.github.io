@@ -2,6 +2,7 @@
 		 
 	function getPage(){
          const url = window.location.href;
+		console.log(url);
 	     const regex = /([a-z]*.html)/gm;
          let pageArray = url.match(regex);
 	     const page = pageArray.join();
