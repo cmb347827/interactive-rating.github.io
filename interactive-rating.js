@@ -12,6 +12,7 @@
 	}
 	
 	function getNum(obj){
+		console.log(obj);
 		let result = getId('result');
 		const regex = /[0-9]+/gm;
 		let buttonArray = obj.match(regex);
