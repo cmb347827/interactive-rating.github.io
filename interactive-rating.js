@@ -24,7 +24,7 @@
 	//in index.html: form-control , click event
 	//in thanks.html: result + form-control.
 	const page = getPage();
-	if(page === 'index.html'){
+	if(page !== 'thanks.html'){
 		console.log('in index.html');
         document.getElementById('radio1').addEventListener('click',() =>{
 			console.log('in radio1');
