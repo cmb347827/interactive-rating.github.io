@@ -1,0 +1,119 @@
+$container__form-sm: 375;
+$container__form-lg: 1140;
+$default:0;
+
+$colors : (Orange:  hsl(25, 97%, 53%),White: hsl(0, 0%, 100%),Light Grey: hsl(217, 12%, 63%), Medium Grey: hsl(216, 12%, 54%),Dark Blue : hsl(213, 19%, 18%), Very Dark Blue: hsl(216, 12%, 8%));
+$fallback-colors: (DarkOrange Snow Gainsboro Silver DarkBlue MidnightBlue);
+
+@mixin bg-color($color,$fallback-color){
+    background-color: $fallback-color;
+    background-color: $color;
+}
+@mixin font-color($color,$fallback-color){
+    color: $fallback-color;
+	color: $color;
+}
+@mixin width($grid-size){
+    width: $grid-size * 1px;
+}
+@mixin margin($var1,$var2:$default,$var3:$default,$var4:$default){
+    @if $var2 == $default {
+	    margin: $var1;
+	} @else if $var3 == $default{
+	    margin: $var1 $var2;
+	} @else if $var4 == $default{
+	    margin: $var1 $var2 $var3;
+	} @else {
+	    margin: $var1 $var2 $var3 $var4;
+	}
+}
+@mixin padding($var1,$var2:$default,$var3:$default,$var4:$default){
+    @if $var2 == $default {
+	    padding: $var1;
+	} @else if $var3 == $default{
+	    padding: $var1 $var2;
+	} @else if $var4 == $default{
+	    padding: $var1 $var2 $var3;
+	} @else {
+	    padding: $var1 $var2 $var3 $var4;
+	}
+}
+
+@mixin border-radius($px){
+    border-radius: $px;
+}
+
+
+*,::before,::after{
+	box-sizing:border-box;
+}
+html, body{
+	width: 100vw;
+	height: 100vh;
+	@include bg-color(map-get($colors,Very Dark Blue), nth($fallback-colors, 6));
+	@include font-color(map-get($colors,White), nth($fallback-colors, 2));
+	font-family: 400 'Overpass', sans-serif;
+	@media screen and (min-width: $container__form-lg * 1px){
+	     font-family: 700 'Overpass', sans-serif;
+	}
+}
+main {
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	.container{
+	     @include width($container__form-sm);
+		 @include margin(100px, auto);
+		 @include bg-color(map-get($colors,Dark Blue), nth($fallback-colors, 5));
+		 @include padding(50px);
+		 form{
+			.svg{
+			    width: 38px;
+				height: 38px;
+				@include bg-color(map-get($colors,Medium Grey), nth($fallback-colors, 4));
+				@include border-radius(50%);
+			}
+			p{
+			    font-size: 15px;
+			}
+			.btn-group{
+				@include margin(25px 0px);
+			}
+			.btn-primary{
+				@include border-radius(15px);
+				@include bg-color(map-get($colors,Orange), nth($fallback-colors, 1));
+				&:active{
+				    @include bg-color(map-get($colors,White), nth($fallback-colors, 2));
+					@include font-color(map-get($colors,Orange), nth($fallback-colors, 1));
+					
+				}
+			}
+			.btn-secondary:not[input='checked']{
+				@include bg-color(map-get($colors,Medium Grey), nth($fallback-colors, 4));
+			}
+			.btn-secondary{
+			    @include border-radius(50%);
+				&:active{
+					 @include bg-color(map-get($colors,Orange), nth($fallback-colors, 1));
+				}
+			}
+		}
+		@media screen and (min-width: $container__form-lg * 1px){
+		    .btn-primary{
+			    &:hover{
+				    @include bg-color(map-get($colors,White), nth($fallback-colors, 2));
+					@include font-color(map-get($colors,Orange), nth($fallback-colors, 1));
+				}
+			}
+			.btn-secondary{
+				&:hover{
+				    @include bg-color(map-get($colors,Orange), nth($fallback-colors, 1));
+				}
+				&:active{
+				     @include bg-color(map-get($colors,Light Grey), nth($fallback-colors, 3));
+				}
+			}
+		
+		}
+	}
+}

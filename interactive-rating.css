@@ -1,0 +1,66 @@
+*, ::before, ::after {
+  box-sizing: border-box; }
+
+html, body {
+  width: 100vw;
+  height: 100vh;
+  background-color: MidnightBlue;
+  background-color: #121417;
+  color: Snow;
+  color: white;
+  font-family: 400 'Overpass', sans-serif; }
+  @media screen and (min-width: 1140px) {
+    html, body {
+      font-family: 700 'Overpass', sans-serif; } }
+
+main {
+  width: 100%;
+  height: 100%;
+  overflow: auto; }
+  main .container {
+    width: 375px;
+    margin: 100px auto;
+    background-color: DarkBlue;
+    background-color: #252d37;
+    padding: 50px; }
+    main .container form .svg {
+      width: 38px;
+      height: 38px;
+      background-color: Silver;
+      background-color: #7c8798;
+      border-radius: 50%; }
+    main .container form p {
+      font-size: 15px; }
+    main .container form .btn-group {
+      margin: 25px 0px; }
+    main .container form .btn-primary {
+      border-radius: 15px;
+      background-color: DarkOrange;
+      background-color: #fb7413; }
+      main .container form .btn-primary:active {
+        background-color: Snow;
+        background-color: white;
+        color: DarkOrange;
+        color: #fb7413; }
+    main .container form .btn-secondary:not[input='checked'] {
+      background-color: Silver;
+      background-color: #7c8798; }
+    main .container form .btn-secondary {
+      border-radius: 50%; }
+      main .container form .btn-secondary:active {
+        background-color: DarkOrange;
+        background-color: #fb7413; }
+    @media screen and (min-width: 1140px) {
+      main .container .btn-primary:hover {
+        background-color: Snow;
+        background-color: white;
+        color: DarkOrange;
+        color: #fb7413; }
+      main .container .btn-secondary:hover {
+        background-color: DarkOrange;
+        background-color: #fb7413; }
+      main .container .btn-secondary:active {
+        background-color: Gainsboro;
+        background-color: #959eac; } }
+
+/*# sourceMappingURL=interactive-rating.css.map */
